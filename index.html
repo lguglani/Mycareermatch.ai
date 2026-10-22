@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerPath AI</title>
+    <meta name="description" content="AI-powered career assistant that matches your resume with real-time job listings and suggests Coursera courses to bridge skill gaps." />
+    <meta property="og:title" content="CareerPath AI" />
+    <meta property="og:description" content="AI-powered career assistant that matches your resume with real-time job listings and suggests Coursera courses to bridge skill gaps." />
+    <!-- PDF.js for client-side resume parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      if (window.pdfjsLib) {
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

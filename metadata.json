@@ -1,0 +1,5 @@
+{
+  "name": "CareerPath AI",
+  "description": "AI-powered career assistant that matches your resume with real-time job listings and suggests Coursera courses to bridge skill gaps.",
+  "requestFramePermissions": []
+}

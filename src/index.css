@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-zinc-50 text-zinc-900 antialiased;
+  }
+}
+
+.glass {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+}
+
+/* Print and PDF Export Styles */
+@media print {
+  /* Hide non-report layout elements */
+  header,
+  footer,
+  nav,
+  .no-print,
+  [data-no-print] {
+    display: none !important;
+  }
+
+  /* Reset body and page canvas for pure white paper output */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #18181b !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Ensure background badges and border colors print accurately */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Report container layout on paper */
+  #printable-career-report {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0.5in !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Prevent page breaks inside cards */
+  .print-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Force clean page breaks when desired */
+  .print-break-before {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* Disable CSS transitions and animations during print */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  /* Remove hover styling during print */
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
